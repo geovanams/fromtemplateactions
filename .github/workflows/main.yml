@@ -1,0 +1,14 @@
+on: [workflow_dispatch]
+
+jobs:
+  List-Branches:
+    runs-on: ubuntu-latest
+    name: A job to List GitHub Repos Branches
+    steps:
+      - name: List Branches action stepp
+        id: list
+        uses: geovanams/actionteste@master
+        with:
+          owner: 'geovanams'
+          repos: 'List-Branch-Docker-Action'
+          access-token: ${{ secrets.ACCESS_TOKEN }}

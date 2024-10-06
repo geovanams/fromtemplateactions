@@ -1,0 +1,24 @@
+# action.yml
+name: 'Hello World-geovanamsteste1'
+description: 'Greet someone and record the time'
+branding:
+  icon: 'git-branch'
+  color: 'blue'
+inputs:
+  owner:  # id of input1
+    description: 'your github username'
+    required: true
+  repos:
+    description: 'your repos name'
+    required: true
+  access-token: 
+    description: 'your user token'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.owner }}
+    - ${{ inputs.repos }}
+    - ${{ inputs.access-token }}
+    
